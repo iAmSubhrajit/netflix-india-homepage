@@ -99,7 +99,7 @@ div.splash div.background-image {
 }
 
 div.splash div.story-card {
-    max-width: 655px;
+    max-width: 700px;
     position: relative;
     padding-top: 235px;
     padding-bottom: 185px;
@@ -119,6 +119,8 @@ div.splash h3 {
 div.splash h1 {
     font-size: 3.125rem;
     font-weight: bold;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 div.splash h2 {
@@ -311,6 +313,8 @@ section.fourth {
 /* FAQ Starts */
 div.faq {
     padding: 70px 45px;
+    padding-bottom: 0px;
+    border-bottom: 8px solid #222;
 }
 
 div.faq h1 {
@@ -376,6 +380,74 @@ div.faq div.form {
     margin: 70px auto;
 }
 
+
+/* --Footer-- */
+div.footer-container{
+    width: 90%;
+    margin: 0 auto;
+    padding: 70px 150px;
+    color: #737373;
+    padding-bottom: 1rem;
+}
+p.top{
+    margin: 0 0 30px;
+    padding: 0;
+}
+span.tel:hover{
+   text-decoration: underline;
+}
+div.footer-items{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+}
+ul li{
+    list-style: none;
+}
+li a{
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #737373;
+    display: inline-block;
+    margin-bottom: 16px;
+    /* min-width: 100px; */
+    padding: 0 12px 0 0;
+}
+li a:hover{
+    text-decoration: underline;
+}
+
+footer select {
+    font-size: 1.2rem;
+    background: #000;
+    border: 1px solid #333;
+    color: #999;
+    padding: 14px 4px 14px 43px;
+    border-radius: 2px;
+}
+
+footer div.select {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+
+footer div.select svg {
+    height: 22px;
+    fill: #999;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 12px;
+}
+
+.footer-country{
+    font-size: 0.8rem;
+    color: #737373;
+    margin: 24px 0 13px;
+}
+
+
+
 /*---- Media Queries---- */
 
 @media only screen and (min-width:0px) and (max-width:949px) {
@@ -391,8 +463,12 @@ div.faq div.form {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
+    div.splash h2{
+        margin: 1rem auto;
+    }
     div.form h3 {
-        font-weight: normal;
+        font-size: 23px;
+        padding: 0 5%;
     }
     section {
         display: grid;
@@ -438,9 +514,6 @@ div.faq div.form {
 }
 
 @media only screen and (max-width:549px) {
-    h1 {
-        margin: 0 0 .4em;
-    }
 
     header {
         padding-left: 1rem;
@@ -488,9 +561,9 @@ div.faq div.form {
     div.splash h2,
     div.form h3 {
         font-size: 1.125rem;
+        font-weight: normal;
     }
-
-    /*  */
+    
     div.form input {
         padding: 13px 10px;
 
@@ -535,14 +608,21 @@ div.faq div.form {
     div.questions {
         font-size: 1.12rem;
     }
+    div.splash form{
+       margin-left: 0;
+       margin-right: 0;
+    }
     div.faq{
-      padding-top: 40px;
-
+      padding: 40px 0 0;
+    }
+    div.faq div.form{
+        margin-top: 20px;
+        margin-bottom: 60px;
     }
     div.faq h1 {
         margin-bottom: 20px;
     }
-
+    
     div.question .header {
         padding: 15px 40px 15px 20px;
     }
@@ -553,8 +633,29 @@ div.faq div.form {
         top: 15px;
     }
 
-}
+    div.footer-container{
+        padding: 50px 15px;
+        padding-bottom: 1rem;
+    }
 
+    div.footer-items{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+@media only screen and (max-width:719px){
+  div.splash h1{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media only screen and (min-width:501px) and (max-width:749px){
+    div.footer-items{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 @media only screen and (min-width:550px) and (max-width:949px) {
     header .logo svg {
         height: 2rem;
@@ -579,6 +680,11 @@ div.faq div.form {
     div.questions {
         font-size: 1.25rem;
     }
+    div.footer-container{
+        padding: 50px 20px;
+        padding-bottom: 1rem;
+    }
+    
 }
 
 @media only screen and (min-width:950px) {
