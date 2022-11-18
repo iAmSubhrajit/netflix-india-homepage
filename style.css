@@ -582,7 +582,7 @@ div.faq div.form {
 }
 
 @media only screen and (min-width:950px) {
-    section:nth-child(even) div.texts {
+    section:nth-child(odd) div.texts {
         order: 2;
     }
 }
