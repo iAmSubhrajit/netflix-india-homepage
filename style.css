@@ -18,11 +18,11 @@ body {
 
 header {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: max-content 1fr;
     padding: 26px 56px;
     position: absolute;
     width: 100%;
-    z-index: 1;
+    z-index: 5;
 }
 
 header .logo {
@@ -31,31 +31,30 @@ header .logo {
 
 header .logo svg {
     fill: #e50914;
-    height: 2.25rem;
+    height: 2.3rem;
     width: 8.375rem;
     line-height: normal;
+    padding-top: 1px;
 }
 
 .header-item-right {
     text-align: right;
 }
 
-header a.redBtn {
+header a.redButton {
     background-color: #e50914;
     color: #ffffff;
     display: inline-block;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 400;
-    line-height: normal;
     padding: 9px 17px;
     border-radius: 3px;
 }
 
 header select {
     background: rgba(0, 0, 0, .4);
-    border: 1px solid #fff;
-    color: #fff;
+    border: 1px solid #aaa;
     color: #ffffff;
     padding: 8px 0px 8px 22px;
     border-radius: 4px;
@@ -67,11 +66,16 @@ header div.select {
 }
 
 header div.select svg {
-    height: 18px;
+    height: 20px;
     fill: #ffffff;
     position: absolute;
-    margin-top: 8px;
+    margin-top: 7px;
     margin-left: 4px;
+}
+
+div.splash {
+    position: relative;
+
 }
 
 div.splash div.gradient {
@@ -80,25 +84,30 @@ div.splash div.gradient {
     inset: 0;
 }
 
-div.splash {
-    position: relative;
+div.splash div.background-image img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    object-fit: cover;
+
 }
 
-div.splash div.background-image img {
-    max-width: 100%;
-    opacity: 0.6;
+div.splash div.background-image {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
 }
 
 div.splash div.story-card {
-    max-width: 640px;
-    position: absolute;
-    inset: 0;
-    left: 50%;
-    margin-left: -327.5px;
-    margin-bottom: 0;
+    max-width: 655px;
+    position: relative;
+    padding-top: 235px;
+    padding-bottom: 185px;
+    margin: 0 auto;
     display: grid;
     align-items: center;
     text-align: center;
+    z-index: 3;
 }
 
 div.splash h1,
@@ -115,7 +124,7 @@ div.splash h1 {
 div.splash h2 {
     font-size: 1.625rem;
     margin-top: 13px;
-    margin-bottom: 26px;
+    margin-bottom: 29px;
 }
 
 div.form h3 {
@@ -125,15 +134,17 @@ div.form h3 {
 
 div.form form {
     position: relative;
-    margin-top: 20px;
+    margin: 20px 20px 0;
     display: grid;
     grid-template-columns: 1fr max-content;
+    row-gap: 15px;
 }
 
 div.form input {
     padding: 15px 10px;
     font-size: 1.2rem;
     width: 100%;
+
 }
 
 div.form input~span {
@@ -141,7 +152,7 @@ div.form input~span {
     left: 12px;
     top: 19px;
     z-index: 3;
-    font-weight: 545;
+    font-weight: 549;
     font-size: 17px;
     color: #aaa;
     transition: all 0.15s ease;
@@ -168,6 +179,7 @@ div.form button {
     background-color: #e50914;
     color: #fff;
     border: 0;
+    border-radius: 2px;
     cursor: pointer;
 }
 
@@ -238,7 +250,6 @@ section div.download {
     border-radius: .75em;
     bottom: 8%;
     box-shadow: 0 0 2em 0 #000;
-    display: flex;
     left: 50%;
     margin: 0 auto;
     min-width: 15em;
@@ -261,7 +272,8 @@ section div.download img.gif {
 }
 
 div.text {
-    line-height: 20px;
+    /* line-height: 20px; */
+    padding-left: 15px;
 }
 
 div.text span {
@@ -364,14 +376,24 @@ div.faq div.form {
     margin: 70px auto;
 }
 
-/* Media Queries */
-@media screen and (min-width: 740px) {
-    h1 {
-        font-size: 38px;
-    }
-}
+/*---- Media Queries---- */
 
 @media only screen and (min-width:0px) and (max-width:949px) {
+    header {
+        padding: 26px 20px;
+    }
+
+    header .logo svg {
+        height: 27px;
+    }
+
+    div.form form {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    div.form h3 {
+        font-weight: normal;
+    }
     section {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -381,13 +403,127 @@ div.faq div.form {
 
     section div.texts {
         padding: 0px;
+        line-height: 1.625rem;
     }
-    
+
+    section div.download {
+        height: auto;
+    }
+
+    div.text {
+        text-align: left;
+        font-size: 1em;
+    }
+
+    div.text span {
+        font-size: 0.75em;
+    }
+
+}
+
+@media only screen and (max-width:420px) {
+    section div.download {
+        height: 3.8rem;
+        width: 80%;
+        bottom: 7.5%;
+    }
+
+    section div.download img {
+        padding-bottom: 5px;
+    }
+
+    section div.download img.gif {
+        height: 50px;
+    }
 }
 
 @media only screen and (max-width:549px) {
     h1 {
         margin: 0 0 .4em;
+    }
+
+    header {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    header .logo svg {
+        height: 1.5rem;
+        width: auto;
+    }
+
+    header select {
+        background: rgba(0, 0, 0, .4);
+        padding: 4px 0 4px 22px;
+        font-size: .875rem;
+    }
+
+    header div.select {
+        margin-right: 5px;
+        text-align: left;
+        padding: 0px;
+
+    }
+
+    header div.select svg {
+        height: 16px;
+        margin-top: 6px;
+        margin-left: 4px;
+    }
+
+    header a.redButton {
+        padding: 4px 8px;
+    }
+
+    div.splash div.story-card {
+        padding: 50px 20px;
+        padding-top: 115px;
+
+    }
+
+    div.splash h1 {
+        font-size: 1.75rem;
+    }
+
+    div.splash h2,
+    div.form h3 {
+        font-size: 1.125rem;
+    }
+
+    /*  */
+    div.form input {
+        padding: 13px 10px;
+
+    }
+
+    div.form input~span {
+        left: 10px;
+        top: 15px;
+        font-weight: 546;
+        font-size: 14px;
+    }
+
+    div.form input:focus~span {
+        font-size: 0.7rem;
+        font-weight: normal;
+    }
+
+    div.form button {
+        font-size: 1rem;
+        padding: 10px 16px;
+    }
+
+    section div.download {
+        height: 4.5rem;
+        width: 70%;
+    }
+
+    section div.download img {
+        height: 50px;
+    }
+
+    div.text {
+        font-size: 0.9em;
     }
 
     section div.texts h1,
@@ -397,13 +533,42 @@ div.faq div.form {
 
     section div.texts p,
     div.questions {
-        font-size: 1.25rem;
+        font-size: 1.12rem;
+    }
+    div.faq{
+      padding-top: 40px;
+
+    }
+    div.faq h1 {
+        margin-bottom: 20px;
     }
 
+    div.question .header {
+        padding: 15px 40px 15px 20px;
+    }
+
+    div.question svg {
+        height: 25px;
+        right: 10px;
+        top: 15px;
+    }
 
 }
 
 @media only screen and (min-width:550px) and (max-width:949px) {
+    header .logo svg {
+        height: 2rem;
+    }
+
+    div.splash div.story-card {
+        padding: 200px 25px;
+        padding-bottom: 150px;
+    }
+
+    div.form button {
+        font-size: 1.2rem;
+        padding: 8px 15px;
+    }
 
     section div.texts h1,
     div.faq h1 {
